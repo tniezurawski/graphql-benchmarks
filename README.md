@@ -46,7 +46,7 @@ node ./benchmark [arguments (optional)]
 
 * __Machine:__ darwin arm64 | 10 vCPUs | 16.0GB Mem
 * __Node:__ `v22.11.0`
-* __Run:__ Sun Nov 03 2024 17:25:38 GMT+0100 (Central European Standard Time)
+* __Run:__ Sun Nov 03 2024 17:55:21 GMT+0100 (Central European Standard Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                          | Version  | Router | Requests/s | Latency (ms) | Throughput/Mb |
@@ -78,5 +78,6 @@ node ./benchmark [arguments (optional)]
 | fastify-big-json         | 5.1.0    | ✓      | 24182.0    | 40.83        | 278.25        |
 | express                  | 5.0.1    | ✓      | 22358.0    | 44.20        | 3.99          |
 | express-with-middlewares | 5.0.1    | ✓      | 20158.4    | 49.09        | 7.50          |
-| express-apollo           | 4.11.2   | ✗      | 3099.2     | 298.34       | 24.72         |
+| express-apollo-jit       | 0.8.7    | ✗      | 3124.3     | 295.96       | 24.92         |
+| express-apollo           | 4.11.2   | ✗      | 3076.7     | 298.06       | 24.54         |
 | trpc-router              | 10.45.2  | ✓      | N/A        | N/A          | N/A           |
