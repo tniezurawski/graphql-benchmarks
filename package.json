@@ -86,8 +86,6 @@
     "x-xss-protection": "^2.0.0"
   },
   "devDependencies": {
-    "prettier": "^3.3.3",
-    "snazzy": "^9.0.0",
-    "standard": "^17.0.0"
+    "prettier": "^3.3.3"
   }
 }
