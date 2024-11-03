@@ -2,7 +2,7 @@
 
 import inquirer from 'inquirer'
 import bench from './lib/bench.js'
-import { choices, list } from './lib/packages.js'
+import { choices, list } from './lib/stacks.js'
 const argv = process.argv.slice(2)
 
 run().catch(err => {
@@ -72,7 +72,7 @@ async function select () {
   const result = await inquirer.prompt([
     {
       type: 'checkbox',
-      message: 'Select packages',
+      message: 'Select stacks',
       name: 'list',
       choices: [
         new inquirer.Separator(' = The usual ='),

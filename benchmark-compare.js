@@ -8,7 +8,7 @@ import Table from 'cli-table'
 import chalk from 'chalk'
 import { join } from 'path'
 import { readdirSync, readFileSync, writeFileSync } from 'fs'
-import { info } from './lib/packages.js'
+import { info } from './lib/stacks.js'
 import { compare } from './lib/autocannon.js'
 
 const resultsPath = join(process.cwd(), 'results')

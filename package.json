@@ -29,7 +29,7 @@
   ],
   "standard": {
     "ignore": [
-      "lib/packages.js"
+      "lib/stacks.js"
     ]
   },
   "license": "MIT",
