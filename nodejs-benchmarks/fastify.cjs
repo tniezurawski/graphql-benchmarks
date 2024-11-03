@@ -1,6 +1,6 @@
-'use strict'
+'use strict';
 
-const fastify = require('fastify')()
+const fastify = require('fastify')();
 
 const schema = {
   schema: {
@@ -9,16 +9,16 @@ const schema = {
         type: 'object',
         properties: {
           hello: {
-            type: 'string'
-          }
-        }
-      }
-    }
-  }
-}
+            type: 'string',
+          },
+        },
+      },
+    },
+  },
+};
 
 fastify.get('/', schema, function (req, reply) {
-  reply.send({ hello: 'world' })
-})
+  reply.send({ hello: 'world' });
+});
 
-fastify.listen({ port: 3000, host: '127.0.0.1' })
+fastify.listen({ port: 3000, host: '127.0.0.1' });

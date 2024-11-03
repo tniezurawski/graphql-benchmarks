@@ -8,6 +8,7 @@
     "start": "node benchmark.js",
     "compare": "node benchmark.js compare --",
     "test": "standard | snazzy",
+    "prettier": "prettier --write \"**/*.{js,ts,cjs}\"",
     "standard": "standard | snazzy",
     "metrics:run": "node metrics/startup.cjs",
     "metrics:summary": "node metrics/process-results.cjs -u"
@@ -82,6 +83,7 @@
     "x-xss-protection": "^2.0.0"
   },
   "devDependencies": {
+    "prettier": "^3.3.3",
     "snazzy": "^9.0.0",
     "standard": "^17.0.0"
   }

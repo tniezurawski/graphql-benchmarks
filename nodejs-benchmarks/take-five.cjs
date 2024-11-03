@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
-const Five = require('take-five')
+const Five = require('take-five');
 
-const server = new Five()
+const server = new Five();
 
 server.get('/', function (req, res, ctx) {
-  return ctx.send({ hello: 'world' })
-})
+  return ctx.send({ hello: 'world' });
+});
 
-server.listen(3000)
+server.listen(3000);

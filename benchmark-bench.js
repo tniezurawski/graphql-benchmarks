@@ -1,74 +1,74 @@
-'use strict'
+'use strict';
 
-import inquirer from 'inquirer'
-import bench from './lib/bench.js'
-import { choices, list } from './lib/stacks.js'
-const argv = process.argv.slice(2)
+import inquirer from 'inquirer';
+import bench from './lib/bench.js';
+import { choices, list } from './lib/stacks.js';
+const argv = process.argv.slice(2);
 
-run().catch(err => {
-  console.error(err)
-  process.exit(1)
-})
+run().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
 
-async function run () {
-  const options = await getBenchmarkOptions()
-  const modules = options.all ? choices : await select()
-  return bench(options, modules)
+async function run() {
+  const options = await getBenchmarkOptions();
+  const modules = options.all ? choices : await select();
+  return bench(options, modules);
 }
 
-async function getBenchmarkOptions () {
-  if (argv.length) return parseArgv()
+async function getBenchmarkOptions() {
+  if (argv.length) return parseArgv();
   return inquirer.prompt([
     {
       type: 'confirm',
       name: 'all',
       message: 'Do you want to run all benchmark tests?',
-      default: false
+      default: false,
     },
     {
       type: 'input',
       name: 'connections',
       message: 'How many connections do you need?',
       default: 100,
-      validate (value) {
-        return !Number.isNaN(parseFloat(value)) || 'Please enter a number'
+      validate(value) {
+        return !Number.isNaN(parseFloat(value)) || 'Please enter a number';
       },
-      filter: Number
+      filter: Number,
     },
     {
       type: 'input',
       name: 'pipelining',
       message: 'How many pipelines do you need?',
       default: 10,
-      validate (value) {
-        return !Number.isNaN(parseFloat(value)) || 'Please enter a number'
+      validate(value) {
+        return !Number.isNaN(parseFloat(value)) || 'Please enter a number';
       },
-      filter: Number
+      filter: Number,
     },
     {
       type: 'input',
       name: 'duration',
       message: 'How long should it take?',
       default: 40,
-      validate (value) {
-        return !Number.isNaN(parseFloat(value)) || 'Please enter a number'
+      validate(value) {
+        return !Number.isNaN(parseFloat(value)) || 'Please enter a number';
       },
-      filter: Number
-    }
-  ])
+      filter: Number,
+    },
+  ]);
 }
 
-function parseArgv () {
-  const [all, connections, pipelining, duration] = argv
+function parseArgv() {
+  const [all, connections, pipelining, duration] = argv;
   return {
     all: all === 'y',
     connections: +connections,
     pipelining: +pipelining,
-    duration: +duration
-  }
+    duration: +duration,
+  };
 }
 
-async function select () {
+async function select() {
   const result = await inquirer.prompt([
     {
       type: 'checkbox',
@@ -78,15 +78,15 @@ async function select () {
         new inquirer.Separator(' = The usual ='),
         ...list(),
         new inquirer.Separator(' = The extras = '),
-        ...list(true)
+        ...list(true),
       ],
       validate: function (answer) {
         if (answer.length < 1) {
-          return 'You must choose at least one package.'
+          return 'You must choose at least one package.';
         }
-        return true
-      }
-    }
-  ])
-  return result.list
+        return true;
+      },
+    },
+  ]);
+  return result.list;
 }

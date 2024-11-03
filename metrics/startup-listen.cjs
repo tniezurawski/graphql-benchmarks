@@ -1,12 +1,16 @@
-const start = process.hrtime()
+const start = process.hrtime();
 
-const fastify = require('fastify')
-const server = fastify()
+const fastify = require('fastify');
+const server = fastify();
 
-const loadingTime = process.hrtime(start)
+const loadingTime = process.hrtime(start);
 
 server.listen({ port: 3000 }, () => {
-  const listenTime = process.hrtime(start)
-  require('node:fs').writeFileSync(`${__filename}.txt`, `${loadingTime} | ${listenTime}\n`, { encoding: 'utf-8', flag: 'a' })
-  server.close()
-})
+  const listenTime = process.hrtime(start);
+  require('node:fs').writeFileSync(
+    `${__filename}.txt`,
+    `${loadingTime} | ${listenTime}\n`,
+    { encoding: 'utf-8', flag: 'a' },
+  );
+  server.close();
+});

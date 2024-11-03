@@ -1,12 +1,12 @@
-'use strict'
+'use strict';
 
-const http = require('http')
-const { serve } = require('micro')
+const http = require('http');
+const { serve } = require('micro');
 
 const server = new http.Server(
   serve(async function (req, res) {
-    return { hello: 'world' }
-  })
-)
+    return { hello: 'world' };
+  }),
+);
 
-server.listen(3000)
+server.listen(3000);

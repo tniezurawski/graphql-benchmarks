@@ -1,9 +1,9 @@
-'use strict'
+'use strict';
 
-const Hapi = require('@hapi/hapi')
+const Hapi = require('@hapi/hapi');
 
-async function start () {
-  const server = Hapi.server({ port: 3000, debug: false })
+async function start() {
+  const server = Hapi.server({ port: 3000, debug: false });
 
   server.route({
     method: 'GET',
@@ -11,16 +11,16 @@ async function start () {
     config: {
       cache: false,
       response: {
-        ranges: false
+        ranges: false,
       },
-      state: { parse: false }
+      state: { parse: false },
     },
     handler: function (request, h) {
-      return { hello: 'world' }
-    }
-  })
+      return { hello: 'world' };
+    },
+  });
 
-  await server.start()
+  await server.start();
 }
 
-start()
+start();

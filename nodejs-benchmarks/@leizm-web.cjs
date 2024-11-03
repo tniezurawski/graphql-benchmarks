@@ -1,11 +1,11 @@
-'use strict'
+'use strict';
 
-const Application = require('@leizm/web').Application
+const Application = require('@leizm/web').Application;
 
-const app = new Application()
+const app = new Application();
 
 app.use('/', function (ctx) {
-  ctx.response.json({ hello: 'world' })
-})
+  ctx.response.json({ hello: 'world' });
+});
 
-app.listen(3000)
+app.listen(3000);
