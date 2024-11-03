@@ -44,38 +44,39 @@ node ./benchmark [arguments (optional)]
 > You can also extend the comparison table with percentage values based on fastest result; `benchmark compare -p`
 # Benchmarks
 
-* __Machine:__ linux x64 | 4 vCPUs | 15.6GB Mem
-* __Node:__ `v20.18.0`
-* __Run:__ Mon Oct 28 2024 01:52:15 GMT+0000 (Coordinated Universal Time)
-* __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000` (two rounds; one to warm-up, one to measure)
+* __Machine:__ darwin arm64 | 10 vCPUs | 16.0GB Mem
+* __Node:__ `v22.11.0`
+* __Run:__ Sun Nov 03 2024 17:25:38 GMT+0100 (Central European Standard Time)
+* __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                          | Version  | Router | Requests/s | Latency (ms) | Throughput/Mb |
 | :--                      | --:      | --:    | :-:        | --:          | --:           |
-| bare                     | v20.18.0 | ✗      | 46784.8    | 20.87        | 8.34          |
-| polka                    | 0.5.2    | ✓      | 45455.2    | 21.50        | 8.11          |
-| connect                  | 3.7.0    | ✗      | 45325.6    | 21.56        | 8.08          |
-| fastify                  | 5.0.0    | ✓      | 45196.8    | 21.62        | 8.10          |
-| rayo                     | 1.4.6    | ✓      | 44948.0    | 21.75        | 8.02          |
-| server-base-router       | 7.1.32   | ✓      | 44907.2    | 21.76        | 8.01          |
-| micro                    | 10.0.1   | ✗      | 44629.6    | 21.91        | 7.96          |
-| server-base              | 7.1.32   | ✗      | 44154.6    | 22.15        | 7.87          |
-| 0http                    | 3.5.3    | ✓      | 43780.8    | 22.34        | 7.81          |
-| polkadot                 | 1.0.0    | ✗      | 42938.4    | 22.79        | 7.66          |
-| connect-router           | 1.3.8    | ✓      | 42189.6    | 23.20        | 7.52          |
-| micro-route              | 2.5.0    | ✓      | 41537.6    | 23.58        | 7.41          |
-| adonisjs                 | 7.2.5    | ✓      | 41484.0    | 23.61        | 7.40          |
-| h3                       | 1.13.0   | ✗      | 40014.4    | 24.49        | 7.14          |
-| h3-router                | 1.13.0   | ✓      | 39348.8    | 24.92        | 7.02          |
-| hono                     | 4.6.7    | ✓      | 37604.8    | 26.09        | 6.71          |
-| restana                  | 4.9.9    | ✓      | 36890.2    | 26.61        | 6.58          |
-| koa                      | 2.15.3   | ✗      | 36380.2    | 26.98        | 6.49          |
-| take-five                | 2.0.0    | ✓      | 34620.6    | 28.38        | 12.45         |
-| koa-isomorphic-router    | 1.0.1    | ✓      | 34356.8    | 28.60        | 6.13          |
-| koa-router               | 12.0.1   | ✓      | 34069.4    | 28.84        | 6.08          |
-| hapi                     | 21.3.12  | ✓      | 30564.4    | 32.20        | 5.45          |
-| restify                  | 11.1.0   | ✓      | 30522.0    | 32.26        | 5.50          |
-| microrouter              | 3.1.3    | ✓      | 29440.4    | 33.46        | 5.25          |
-| fastify-big-json         | 5.0.0    | ✓      | 11529.8    | 86.14        | 132.65        |
-| express                  | 5.0.1    | ✓      | 9916.0     | 100.23       | 1.77          |
-| express-with-middlewares | 5.0.1    | ✓      | 9084.6     | 109.41       | 3.38          |
+| bare                     | v22.11.0 | ✗      | 134608.8   | 6.93         | 24.01         |
+| connect                  | 3.7.0    | ✗      | 128150.4   | 7.31         | 22.85         |
+| server-base              | 7.1.32   | ✗      | 125667.2   | 7.46         | 22.41         |
+| polka                    | 0.5.2    | ✓      | 125464.0   | 7.46         | 22.38         |
+| h3                       | 1.13.0   | ✗      | 124132.0   | 7.57         | 22.14         |
+| micro                    | 10.0.1   | ✗      | 122932.8   | 7.64         | 21.92         |
+| rayo                     | 1.4.6    | ✓      | 121763.2   | 7.71         | 21.71         |
+| server-base-router       | 7.1.32   | ✓      | 117240.0   | 8.04         | 20.91         |
+| connect-router           | 1.3.8    | ✓      | 117006.4   | 8.05         | 20.87         |
+| micro-route              | 2.5.0    | ✓      | 115329.6   | 8.18         | 20.57         |
+| restana                  | 4.9.9    | ✓      | 113670.4   | 8.28         | 20.27         |
+| adonisjs                 | 7.2.5    | ✓      | 111027.2   | 8.51         | 19.80         |
+| 0http                    | 3.5.3    | ✓      | 109913.6   | 8.61         | 19.60         |
+| hono                     | 4.6.8    | ✓      | 108276.8   | 8.74         | 19.31         |
+| h3-router                | 1.13.0   | ✓      | 107776.0   | 8.78         | 19.22         |
+| polkadot                 | 1.0.0    | ✗      | 106614.4   | 8.88         | 19.01         |
+| koa                      | 2.15.3   | ✗      | 104046.4   | 9.12         | 18.56         |
+| koa-isomorphic-router    | 1.0.1    | ✓      | 98840.0    | 9.62         | 17.63         |
+| koa-router               | 12.0.1   | ✓      | 94681.6    | 10.05        | 16.89         |
+| take-five                | 2.0.0    | ✓      | 92182.4    | 10.35        | 33.14         |
+| restify                  | 11.1.0   | ✓      | 91254.4    | 10.44        | 16.45         |
+| hapi                     | 21.3.12  | ✓      | 86243.2    | 11.09        | 15.38         |
+| microrouter              | 3.1.3    | ✓      | 79552.0    | 12.09        | 14.19         |
+| fastify                  | 5.1.0    | ✓      | 73046.4    | 13.19        | 17.97         |
+| fastify-big-json         | 5.1.0    | ✓      | 24182.0    | 40.83        | 278.25        |
+| express                  | 5.0.1    | ✓      | 22358.0    | 44.20        | 3.99          |
+| express-with-middlewares | 5.0.1    | ✓      | 20158.4    | 49.09        | 7.50          |
+| express-apollo           | 4.11.2   | ✗      | 3099.2     | 298.34       | 24.72         |
 | trpc-router              | 10.45.2  | ✓      | N/A        | N/A          | N/A           |
