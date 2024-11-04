@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node benchmark.js",
     "compare": "node benchmark.js compare --",
+    "compare:update": "node benchmark.js compare -u",
     "build": "tsc && mv dist/schemas/createTypeGraphQLSchema.js lib/schemas/createTypeGraphQLSchema.cjs",
     "test": "standard | snazzy",
     "prettier": "prettier --write \"**/*.{js,ts,cjs}\"",
@@ -73,6 +74,7 @@
     "koa-isomorphic-router": "^1.0.1",
     "koa-router": "^12.0.0",
     "md5": "^2.3.0",
+    "mercurius": "^15.1.0",
     "micro": "^10.0.1",
     "micro-route": "^2.5.0",
     "microrouter": "^3.1.3",
