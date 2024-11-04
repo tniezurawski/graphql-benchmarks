@@ -11,6 +11,7 @@ import {
   Root,
 } from 'type-graphql';
 import { data } from '../data.cjs';
+import md5 = require('md5');
 
 @ObjectType()
 class Book {
@@ -35,6 +36,8 @@ class Author {
   @Field()
   fullName: string;
   @Field()
+  md5: string;
+  @Field()
   company: string;
   @Field(() => [Book])
   books: Book[];
@@ -45,6 +48,10 @@ class SimpleResolver {
   @FieldResolver()
   fullName(@Root() root: Author) {
     return root.firstName + ' ' + root.lastName;
+  }
+  @FieldResolver()
+  md5(@Root() root: Author) {
+    return md5(root.firstName);
   }
   @Query(() => [Author])
   authors() {
@@ -57,6 +64,10 @@ class AsyncResolver {
   @FieldResolver()
   fullName(@Root() root: Author) {
     return root.firstName + ' ' + root.lastName;
+  }
+  @FieldResolver()
+  md5(@Root() root: Author) {
+    return md5(root.firstName);
   }
   @Query(() => [Author])
   async authors() {

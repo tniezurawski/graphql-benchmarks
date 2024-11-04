@@ -46,7 +46,7 @@ node ./benchmark [arguments (optional)]
 
 * __Machine:__ darwin arm64 | 10 vCPUs | 16.0GB Mem
 * __Node:__ `v22.11.0`
-* __Run:__ Mon Nov 04 2024 23:23:22 GMT+0100 (Central European Standard Time)
+* __Run:__ Mon Nov 04 2024 23:40:43 GMT+0100 (Central European Standard Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                                 | Version    | Router | Requests/s | Latency (ms) | Throughput/Mb |
@@ -78,8 +78,8 @@ node ./benchmark [arguments (optional)]
 | fastify-big-json                | 5.1.0      | ✓      | 24182.0    | 40.83        | 278.25        |
 | express                         | 5.0.1      | ✓      | 22358.0    | 44.20        | 3.99          |
 | express-with-middlewares        | 5.0.1      | ✓      | 20158.4    | 49.09        | 7.50          |
-| express-apollo-jit              | 0.8.7      | ✗      | 3128.9     | 295.54       | 24.96         |
-| express-apollo                  | 4.11.2     | ✗      | 3103.7     | 295.54       | 24.76         |
-| express-apollo-type-graphql     | 2.0.0-rc.2 | ✗      | 3053.3     | 300.38       | 24.36         |
-| express-apollo-type-graphql-jit | 0.8.7      | ✗      | 3052.9     | 300.41       | 24.35         |
+| express-apollo-jit              | 0.8.7      | ✗      | 2592.2     | 322.76       | 22.70         |
+| express-apollo                  | 4.11.2     | ✗      | 2588.7     | 323.18       | 22.67         |
+| express-apollo-type-graphql     | 2.0.0-rc.2 | ✗      | 2505.8     | 320.06       | 21.95         |
+| express-apollo-type-graphql-jit | 0.8.7      | ✗      | 2497.3     | 316.22       | 21.87         |
 | trpc-router                     | 10.45.2    | ✓      | N/A        | N/A          | N/A           |
