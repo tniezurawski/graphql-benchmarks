@@ -19,7 +19,7 @@ node ./benchmark [arguments (optional)]
 
 * __Machine:__ darwin arm64 | 10 vCPUs | 16.0GB Mem
 * __Node:__ `v22.11.0`
-* __Run:__ Tue Nov 05 2024 09:17:07 GMT+0100 (Central European Standard Time)
+* __Run:__ Tue Nov 05 2024 18:59:30 GMT+0100 (Central European Standard Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                                    | Requests/s | Latency (ms) | Throughput/Mb |
@@ -28,6 +28,7 @@ node ./benchmark [arguments (optional)]
 | fastify-mercurius-type-graphql-jit | 9957.8     | 99.82        | 86.05         |
 | fastify-mercurius                  | 5715.1     | 174.13       | 49.39         |
 | fastify-mercurius-type-graphql     | 5401.0     | 184.26       | 46.67         |
+| express-yoga                       | 3732.6     | 255.88       | 32.45         |
 | express-apollo-jit                 | 2576.2     | 324.78       | 22.56         |
 | express-apollo                     | 2570.9     | 322.55       | 22.52         |
 | express-apollo-type-graphql        | 2492.8     | 316.79       | 21.84         |
