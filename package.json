@@ -38,6 +38,7 @@
   "license": "MIT",
   "dependencies": {
     "@apollo/server": "^4.11.2",
+    "@envelop/graphql-jit": "^8.0.3",
     "@faker-js/faker": "^9.1.0",
     "autocannon": "^8.0.0",
     "autocannon-compare": "^0.4.0",
