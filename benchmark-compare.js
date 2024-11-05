@@ -96,8 +96,6 @@ function compareResults(markdown) {
     ...tableStyle,
     head: [
       '',
-      'Version',
-      'Router',
       'Requests/s',
       'Latency (ms)',
       'Throughput/Mb',
@@ -105,7 +103,7 @@ function compareResults(markdown) {
   });
 
   if (markdown) {
-    table.push([':--', '--:', '--:', ':-:', '--:', '--:']);
+    table.push([':--', ':-:', '--:', '--:']);
   }
 
   const results = getAvailableResults()
@@ -121,7 +119,6 @@ function compareResults(markdown) {
 
   for (const result of results) {
     const beBold = result.server === 'fastify';
-    const { hasRouter, version } = info(result.server) || {};
     const {
       requests: { average: requests },
       latency: { average: latency },
@@ -130,8 +127,6 @@ function compareResults(markdown) {
 
     outputResults.push({
       name: result.server,
-      version,
-      hasRouter,
       requests: requests ? requests.toFixed(1) : 'N/A',
       latency: latency ? latency.toFixed(2) : 'N/A',
       throughput: formatThroughput(throughput),
@@ -139,8 +134,6 @@ function compareResults(markdown) {
 
     table.push([
       bold(beBold, chalk.blue(result.server)),
-      bold(beBold, version),
-      bold(beBold, formatHasRouter(hasRouter)),
       bold(beBold, requests ? requests.toFixed(1) : 'N/A'),
       bold(beBold, latency ? latency.toFixed(2) : 'N/A'),
       bold(beBold, throughput ? (throughput / 1024 / 1024).toFixed(2) : 'N/A'),
