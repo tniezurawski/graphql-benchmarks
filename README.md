@@ -19,15 +19,17 @@ node ./benchmark [arguments (optional)]
 
 * __Machine:__ darwin arm64 | 10 vCPUs | 16.0GB Mem
 * __Node:__ `v22.11.0`
-* __Run:__ Tue Nov 05 2024 21:00:10 GMT+0100 (Central European Standard Time)
+* __Run:__ Tue Nov 05 2024 21:33:11 GMT+0100 (Central European Standard Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                                    | Requests/s | Latency (ms) | Throughput/Mb |
 | :--                                | --:        | --:          | --:           |
-| fastify-mercurius-jit              | 12238.0    | 81.13        | 105.76        |
-| fastify-mercurius-type-graphql-jit | 9957.8     | 99.82        | 86.05         |
-| fastify-mercurius                  | 5715.1     | 174.13       | 49.39         |
-| fastify-mercurius-type-graphql     | 5401.0     | 184.26       | 46.67         |
+| fastify-mercurius-jit              | 12396.4    | 80.10        | 107.12        |
+| bun-fastify-mercurius-jit          | 11779.8    | 84.31        | 101.25        |
+| fastify-mercurius-type-graphql-jit | 9724.0     | 102.22       | 84.03         |
+| bun-fastify-mercurius              | 6815.7     | 145.96       | 58.59         |
+| fastify-mercurius                  | 5755.2     | 172.92       | 49.73         |
+| fastify-mercurius-type-graphql     | 5223.8     | 190.50       | 45.14         |
 | yoga                               | 4632.6     | 212.12       | 40.03         |
 | yoga-type-graphql                  | 4293.1     | 226.57       | 37.09         |
 | express-yoga                       | 3732.6     | 255.88       | 32.45         |
