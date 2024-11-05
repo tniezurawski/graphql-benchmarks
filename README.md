@@ -19,11 +19,11 @@ node ./benchmark [arguments (optional)]
 
 * __Machine:__ darwin arm64 | 10 vCPUs | 16.0GB Mem
 * __Node:__ `v22.11.0`
-* __Run:__ Tue Nov 05 2024 09:04:56 GMT+0100 (Central European Standard Time)
+* __Run:__ Tue Nov 05 2024 09:06:58 GMT+0100 (Central European Standard Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                                 | Requests/s | Latency (ms) | Throughput/Mb |
-| :--                             | :-:        | --:          | --:           |
+| :--                             | --:        | --:          | --:           |
 | fastify-mercurius-jit           | 12238.0    | 81.13        | 105.76        |
 | fastify-mercurius               | 5715.1     | 174.13       | 49.39         |
 | express-apollo-jit              | 2576.2     | 324.78       | 22.56         |

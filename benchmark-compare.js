@@ -103,7 +103,7 @@ function compareResults(markdown) {
   });
 
   if (markdown) {
-    table.push([':--', ':-:', '--:', '--:']);
+    table.push([':--', '--:', '--:', '--:']);
   }
 
   const results = getAvailableResults()
