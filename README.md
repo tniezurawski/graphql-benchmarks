@@ -19,7 +19,7 @@ node ./benchmark [arguments (optional)]
 
 * __Machine:__ darwin arm64 | 10 vCPUs | 16.0GB Mem
 * __Node:__ `v22.11.0`
-* __Run:__ Wed Nov 06 2024 13:10:43 GMT+0100 (Central European Standard Time)
+* __Run:__ Wed Nov 06 2024 13:23:27 GMT+0100 (Central European Standard Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                                    | Requests/s | Latency (ms) | Throughput/Mb |
@@ -42,4 +42,5 @@ node ./benchmark [arguments (optional)]
 | express-apollo-jit                 | 2576.2     | 324.78       | 22.56         |
 | express-apollo-type-graphql        | 2492.8     | 316.79       | 21.84         |
 | express-apollo-type-graphql-jit    | 2472.4     | 313.46       | 21.65         |
+| nestjs-fastify-apollo              | 2467.7     | 311.04       | 21.38         |
 | nestjs-express-apollo              | 2095.5     | 299.09       | 18.29         |
