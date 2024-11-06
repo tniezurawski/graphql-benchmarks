@@ -19,7 +19,7 @@ node ./benchmark [arguments (optional)]
 
 * __Machine:__ darwin arm64 | 10 vCPUs | 16.0GB Mem
 * __Node:__ `v22.11.0`
-* __Run:__ Wed Nov 06 2024 13:23:27 GMT+0100 (Central European Standard Time)
+* __Run:__ Wed Nov 06 2024 14:22:20 GMT+0100 (Central European Standard Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                                    | Requests/s | Latency (ms) | Throughput/Mb |
@@ -34,6 +34,7 @@ node ./benchmark [arguments (optional)]
 | fastify-mercurius-type-graphql     | 5223.8     | 190.50       | 45.14         |
 | yoga                               | 4632.6     | 212.12       | 40.03         |
 | yoga-type-graphql                  | 4293.1     | 226.57       | 37.09         |
+| nestjs-fastify-mercurius           | 3915.6     | 245.83       | 33.83         |
 | express-yoga                       | 3732.6     | 255.88       | 32.45         |
 | express-yoga-type-graphql          | 3599.9     | 264.58       | 31.29         |
 | yoga-no-jit                        | 3390.3     | 279.43       | 29.29         |
