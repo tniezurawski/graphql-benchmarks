@@ -6,10 +6,11 @@ import { program } from 'commander';
 import inquirer from 'inquirer';
 import Table from 'cli-table';
 import chalk from 'chalk';
-import { join } from 'path';
+import path, { join } from 'path';
 import { readdirSync, readFileSync, writeFileSync } from 'fs';
 import { info } from './lib/stacks.js';
 import { compare } from './lib/autocannon.js';
+import { exec } from 'child_process';
 
 const resultsPath = join(process.cwd(), 'results');
 
@@ -28,7 +29,7 @@ if (opts.markdown || opts.update) {
 if (!getAvailableResults().length) {
   console.log(chalk.red('Benchmark to gather some results to compare.'));
 } else if (opts.update) {
-  updateReadme();
+  await updateReadme();
 } else if (opts.table) {
   console.log(compareResults(opts.markdown));
 } else {
@@ -46,12 +47,14 @@ function formatHasRouter(hasRouter) {
   return typeof hasRouter === 'string' ? hasRouter : hasRouter ? '✓' : '✗';
 }
 
-function updateReadme() {
+async function updateReadme() {
   const machineInfo = `${platform()} ${arch()} | ${cpus().length} vCPUs | ${(totalmem() / 1024 ** 3).toFixed(1)}GB Mem`;
+  const bunVersion = await getBunVersion();
   const benchmarkMd = `# Benchmarks
 
 * __Machine:__ ${machineInfo}
 * __Node:__ \`${process.version}\`
+* __Bun:__ \`${bunVersion}\`
 * __Run:__ ${new Date()}
 * __Method:__ \`autocannon -c 100 -d 40 -p 10 localhost:3000/graphql\` (two rounds; one to warm-up, one to measure)
 
@@ -63,6 +66,18 @@ ${compareResults(true)}
     md.split('# Benchmarks', 1)[0] + benchmarkMd,
     'utf8',
   );
+}
+
+async function getBunVersion() {
+  return new Promise((resolve) => {
+    exec('bun --version', {}, (error, stdout, stderr) => {
+      if (stdout) {
+        resolve('v' + stdout.replace(/\n/g, ''));
+        return;
+      }
+      resolve('No bun?');
+    });
+  });
 }
 
 function compareResults(markdown) {
@@ -94,12 +109,7 @@ function compareResults(markdown) {
 
   const table = new Table({
     ...tableStyle,
-    head: [
-      '',
-      'Requests/s',
-      'Latency (ms)',
-      'Throughput/Mb',
-    ],
+    head: ['', 'Requests/s', 'Latency (ms)', 'Throughput/Mb'],
   });
 
   if (markdown) {
@@ -125,15 +135,21 @@ function compareResults(markdown) {
       throughput: { average: throughput },
     } = result;
 
+    let name = result.server;
+
+    if (!['bun', 'deno'].includes(name.split('-')[0])) {
+      name = 'nodejs-' + name;
+    }
+
     outputResults.push({
-      name: result.server,
+      name,
       requests: requests ? requests.toFixed(1) : 'N/A',
       latency: latency ? latency.toFixed(2) : 'N/A',
       throughput: formatThroughput(throughput),
     });
 
     table.push([
-      bold(beBold, chalk.blue(result.server)),
+      bold(beBold, chalk.blue(name)),
       bold(beBold, requests ? requests.toFixed(1) : 'N/A'),
       bold(beBold, latency ? latency.toFixed(2) : 'N/A'),
       bold(beBold, throughput ? (throughput / 1024 / 1024).toFixed(2) : 'N/A'),
