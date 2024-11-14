@@ -19,20 +19,20 @@ node ./benchmark [arguments (optional)]
 
 * __Machine:__ darwin arm64 | 10 vCPUs | 16.0GB Mem
 * __Node:__ `v22.11.0`
-* __Bun:__ `v1.1.33`
-* __Run:__ Thu Nov 14 2024 20:41:32 GMT+0100 (Central European Standard Time)
+* __Bun:__ `v1.1.34`
+* __Run:__ Thu Nov 14 2024 21:38:09 GMT+0100 (Central European Standard Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                                                       | Requests/s | Latency (ms) | Throughput/Mb |
 | :--                                                   | --:        | --:          | --:           |
 | nodejs-fastify-mercurius-jit                          | 12396.4    | 80.10        | 107.12        |
-| bun-fastify-mercurius-jit                             | 11779.8    | 84.31        | 101.25        |
-| bun-yoga-jit                                          | 11283.4    | 88.03        | 97.00         |
+| bun-fastify-mercurius-jit                             | 11811.6    | 84.08        | 101.53        |
+| bun-yoga-jit                                          | 11267.4    | 88.16        | 96.85         |
 | nodejs-nestjs-fastify-mercurius-jit-deparentification | 9904.6     | 100.34       | 85.59         |
 | nodejs-fastify-mercurius-type-graphql-jit             | 9724.0     | 102.22       | 84.03         |
 | nodejs-nestjs-fastify-mercurius-jit                   | 7679.1     | 129.54       | 66.36         |
-| bun-yoga                                              | 7490.5     | 132.80       | 64.38         |
-| bun-fastify-mercurius                                 | 6815.7     | 145.96       | 58.59         |
+| bun-yoga                                              | 7407.7     | 134.29       | 63.68         |
+| bun-fastify-mercurius                                 | 6901.6     | 144.16       | 59.33         |
 | nodejs-fastify-mercurius                              | 5755.2     | 172.92       | 49.73         |
 | nodejs-fastify-mercurius-type-graphql                 | 5223.8     | 190.50       | 45.14         |
 | nodejs-yoga                                           | 4632.6     | 212.12       | 40.03         |
