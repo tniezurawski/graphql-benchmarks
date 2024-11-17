@@ -1,10 +1,10 @@
 'use strict';
-const { exec } = require('child_process');
-const path = require('path');
+import { exec } from 'child_process';
+import path from 'path';
 
 const forked = exec(
-  'bun run server.ts',
-  { cwd: path.join(__dirname, '..', 'bun-benchmarks/fastify-mercurius/') },
+  'deno run --allow-env --allow-net server.ts',
+  { cwd: path.join(import.meta.dirname, '..', 'deno-benchmarks', 'yoga') },
   (error, stdout, stderr) => {
     if (error) {
       console.log(`error: ${error.message}`);
@@ -16,9 +16,10 @@ const forked = exec(
     }
     if (stdout) {
       console.log(`stdout: ${stdout}`);
-      return;
     }
   },
 );
-process.on('SIGINT', () => forked.kill());
-forked.on('exit', () => console.log(' bun-fastify-mercurius exited'));
+process.on('SIGINT', () => {
+  forked.kill();
+});
+forked.on('exit', () => console.log(' deno-yoga exited'));

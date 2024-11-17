@@ -10,8 +10,8 @@ import {
   FieldResolver,
   Root,
 } from 'type-graphql';
-import { data } from '../data.cjs';
-import md5 = require('md5');
+import { data } from '../data.js';
+import md5 from 'md5';
 
 @ObjectType()
 class Book {

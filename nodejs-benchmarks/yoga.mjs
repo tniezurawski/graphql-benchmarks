@@ -1,8 +1,8 @@
 'use strict';
 
-const { createServer } = require('node:http');
-const { createYoga } = require('graphql-yoga');
-const { createApolloSchema } = require('../lib/schemas/createApolloSchema.cjs');
+import { createServer } from 'node:http';
+import { createYoga } from 'graphql-yoga';
+import { createApolloSchema } from '../lib/schemas/createApolloSchema.js';
 
 const schema = createApolloSchema();
 const yoga = createYoga({

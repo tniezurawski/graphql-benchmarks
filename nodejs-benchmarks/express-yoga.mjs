@@ -1,10 +1,9 @@
 'use strict';
 
-const express = require('express');
-const { createYoga } = require('graphql-yoga');
-
-const cors = require('cors');
-const { createApolloSchema } = require('../lib/schemas/createApolloSchema.cjs');
+import express from 'express';
+import cors from 'cors';
+import { createYoga } from 'graphql-yoga';
+import { createApolloSchema } from '../lib/schemas/createApolloSchema.js';
 
 const app = express();
 const schema = createApolloSchema();

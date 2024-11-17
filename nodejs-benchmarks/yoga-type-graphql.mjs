@@ -1,10 +1,8 @@
 'use strict';
 
-const { createServer } = require('node:http');
-const { createYoga } = require('graphql-yoga');
-const {
-  createTypeGraphQLSchema,
-} = require('../lib/schemas/createTypeGraphQLSchema.cjs');
+import { createServer } from 'node:http';
+import { createYoga } from 'graphql-yoga';
+import { createTypeGraphQLSchema } from '../lib/schemas/createTypeGraphQLSchema.js';
 
 createTypeGraphQLSchema().then((schema) => {
   const yoga = createYoga({

@@ -1,17 +1,16 @@
 'use strict';
 
-const Fastify = require('fastify');
-const mercurius = require('mercurius');
+import Fastify from 'fastify';
+import mercurius from 'mercurius';
 
-const {
-  createTypeGraphQLSchema,
-} = require('../lib/schemas/createTypeGraphQLSchema.cjs');
+import { createTypeGraphQLSchema } from '../lib/schemas/createTypeGraphQLSchema.js';
 
 const app = Fastify();
 
 createTypeGraphQLSchema().then((schema) => {
   app.register(mercurius, {
     schema,
+    jit: 1,
   });
 
   app.listen({

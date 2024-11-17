@@ -1,12 +1,11 @@
 'use strict';
 
-const cors = require('cors');
-const { ApolloServer } = require('@apollo/server');
-const { expressMiddleware } = require('@apollo/server/express4');
-const express = require('express');
-const {
-  createTypeGraphQLSchema,
-} = require('../lib/schemas/createTypeGraphQLSchema.cjs');
+import express from 'express';
+import cors from 'cors';
+import { ApolloServer } from '@apollo/server';
+import { expressMiddleware } from '@apollo/server/express4';
+
+import { createTypeGraphQLSchema } from '../lib/schemas/createTypeGraphQLSchema.js';
 
 const app = express();
 

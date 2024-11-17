@@ -1,12 +1,9 @@
 'use strict';
 
-const express = require('express');
-const { createYoga } = require('graphql-yoga');
-
-const cors = require('cors');
-const {
-  createTypeGraphQLSchema,
-} = require('../lib/schemas/createTypeGraphQLSchema.cjs');
+import express from 'express';
+import cors from 'cors';
+import { createYoga } from 'graphql-yoga';
+import { createTypeGraphQLSchema } from '../lib/schemas/createTypeGraphQLSchema.js';
 
 const app = express();
 
