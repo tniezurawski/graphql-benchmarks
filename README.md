@@ -20,7 +20,7 @@ node ./benchmark [arguments (optional)]
 * __Machine:__ darwin arm64 | 10 vCPUs | 16.0GB Mem
 * __Node:__ `v22.11.0`
 * __Bun:__ `v1.1.34`
-* __Run:__ Sun Nov 17 2024 23:07:22 GMT+0100 (Central European Standard Time)
+* __Run:__ Sun Nov 17 2024 23:16:35 GMT+0100 (Central European Standard Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                                                       | Requests/s | Latency (ms) | Throughput/Mb |
@@ -30,6 +30,7 @@ node ./benchmark [arguments (optional)]
 | bun-fastify-mercurius-jit                             | 11688.4    | 84.97        | 100.47        |
 | bun-yoga-jit                                          | 11329.6    | 87.67        | 97.39         |
 | nodejs-yoga-jit                                       | 11096.0    | 89.53        | 95.88         |
+| deno-fastify-mercurius-jit                            | 10554.6    | 94.15        | 90.96         |
 | nodejs-fastify-mercurius-type-graphql-jit             | 9991.8     | 99.47        | 86.35         |
 | nodejs-nestjs-fastify-mercurius-jit-deparentification | 9904.6     | 100.34       | 85.59         |
 | nodejs-nestjs-fastify-mercurius-jit                   | 7679.1     | 129.54       | 66.36         |
@@ -41,6 +42,7 @@ node ./benchmark [arguments (optional)]
 | nodejs-yoga                                           | 5443.6     | 182.81       | 47.04         |
 | nodejs-yoga-type-graphql                              | 5332.6     | 186.61       | 46.08         |
 | deno-yoga                                             | 4469.4     | 222.68       | 38.52         |
+| deno-fastify-mercurius                                | 4406.5     | 225.89       | 37.97         |
 | nodejs-express-yoga                                   | 4352.3     | 224.05       | 37.83         |
 | nodejs-express-yoga-type-graphql                      | 4190.9     | 231.46       | 36.43         |
 | nodejs-nestjs-fastify-mercurius                       | 3915.6     | 245.83       | 33.83         |
