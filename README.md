@@ -21,7 +21,7 @@ node ./benchmark [arguments (optional)]
 * __Node:__ `v22.11.0`
 * __Bun:__ `v1.1.34`
 * __Deno:__ `v2.0.6`
-* __Run:__ Fri Nov 22 2024 12:23:27 GMT+0100 (Central European Standard Time)
+* __Run:__ Fri Nov 22 2024 14:30:30 GMT+0100 (Central European Standard Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                                                       | Requests/s | Latency (ms) | Throughput/Mb |
@@ -49,6 +49,7 @@ node ./benchmark [arguments (optional)]
 | nodejs-koa-graphql-api                                | 3925.4     | 245.21       | 33.89         |
 | nodejs-nestjs-fastify-mercurius                       | 3915.6     | 245.83       | 33.83         |
 | nodejs-yoga-no-pav-cache                              | 3913.3     | 245.96       | 33.81         |
+| nodejs-express-graphql-http                           | 3157.2     | 293.71       | 27.40         |
 | nodejs-koa-apollo                                     | 2963.5     | 304.39       | 25.81         |
 | nodejs-express-yoga-no-pav-cache                      | 2629.1     | 319.20       | 22.85         |
 | nodejs-express-apollo                                 | 2618.2     | 322.44       | 22.93         |
