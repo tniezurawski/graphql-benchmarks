@@ -50,11 +50,13 @@ function formatHasRouter(hasRouter) {
 async function updateReadme() {
   const machineInfo = `${platform()} ${arch()} | ${cpus().length} vCPUs | ${(totalmem() / 1024 ** 3).toFixed(1)}GB Mem`;
   const bunVersion = await getBunVersion();
+  const denoVersion = await getDenoVersion();
   const benchmarkMd = `# Benchmarks
 
 * __Machine:__ ${machineInfo}
 * __Node:__ \`${process.version}\`
 * __Bun:__ \`${bunVersion}\`
+* __Deno:__ \`${denoVersion}\`
 * __Run:__ ${new Date()}
 * __Method:__ \`autocannon -c 100 -d 40 -p 10 localhost:3000/graphql\` (two rounds; one to warm-up, one to measure)
 
@@ -76,6 +78,23 @@ async function getBunVersion() {
         return;
       }
       resolve('No bun?');
+    });
+  });
+}
+
+async function getDenoVersion() {
+  return new Promise((resolve) => {
+    exec('deno --version', {}, (error, stdout, stderr) => {
+      if (stdout) {
+        const match = stdout.match(/^deno (\d+\.\d+\.\d+)/);
+        if (match) {
+          resolve('v' + match[1]);
+        } else {
+          resolve('Unable to parse version');
+        }
+        return;
+      }
+      resolve('No deno?');
     });
   });
 }

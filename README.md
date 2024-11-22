@@ -20,7 +20,8 @@ node ./benchmark [arguments (optional)]
 * __Machine:__ darwin arm64 | 10 vCPUs | 16.0GB Mem
 * __Node:__ `v22.11.0`
 * __Bun:__ `v1.1.34`
-* __Run:__ Sun Nov 17 2024 23:16:35 GMT+0100 (Central European Standard Time)
+* __Deno:__ `v2.0.6`
+* __Run:__ Fri Nov 22 2024 11:00:54 GMT+0100 (Central European Standard Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                                                       | Requests/s | Latency (ms) | Throughput/Mb |
