@@ -21,7 +21,7 @@ node ./benchmark [arguments (optional)]
 * __Node:__ `v22.11.0`
 * __Bun:__ `v1.1.34`
 * __Deno:__ `v2.0.6`
-* __Run:__ Fri Nov 22 2024 15:43:48 GMT+0100 (Central European Standard Time)
+* __Run:__ Sat Nov 23 2024 17:08:07 GMT+0100 (Central European Standard Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                                                       | Requests/s | Latency (ms) | Throughput/Mb |
@@ -46,11 +46,12 @@ node ./benchmark [arguments (optional)]
 | deno-yoga                                             | 4469.4     | 222.68       | 38.52         |
 | deno-fastify-mercurius                                | 4406.5     | 225.89       | 37.97         |
 | nodejs-express-yoga                                   | 4352.3     | 224.05       | 37.83         |
-| nodejs-express-yoga-type-graphql                      | 4190.9     | 231.46       | 36.43         |
+| nodejs-express-yoga-pothos                            | 4124.5     | 235.19       | 35.85         |
 | nodejs-koa-graphql-api                                | 3925.4     | 245.21       | 33.89         |
 | nodejs-nestjs-fastify-mercurius                       | 3915.6     | 245.83       | 33.83         |
 | nodejs-yoga-no-pav-cache                              | 3913.3     | 245.96       | 33.81         |
 | nodejs-graphql-http                                   | 3843.1     | 249.82       | 33.27         |
+| nodejs-express-yoga-type-graphql                      | 3625.2     | 262.74       | 31.51         |
 | nodejs-graphql-http-type-graphql                      | 3580.5     | 266.84       | 31.00         |
 | nodejs-express-graphql-http                           | 3157.2     | 293.71       | 27.40         |
 | nodejs-express-graphql-http-type-graphql              | 3037.1     | 300.35       | 26.36         |
