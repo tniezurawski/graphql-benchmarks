@@ -21,12 +21,13 @@ node ./benchmark [arguments (optional)]
 * __Node:__ `v22.11.0`
 * __Bun:__ `v1.1.34`
 * __Deno:__ `v2.0.6`
-* __Run:__ Sat Nov 23 2024 18:35:49 GMT+0100 (Central European Standard Time)
+* __Run:__ Sat Nov 23 2024 18:38:27 GMT+0100 (Central European Standard Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                                                       | Requests/s | Latency (ms) | Throughput/Mb |
 | :--                                                   | --:        | --:          | --:           |
 | nodejs-fastify-mercurius-jit                          | 12706.4    | 78.13        | 109.81        |
+| nodejs-fastify-mercurius-pothos-jit                   | 12433.2    | 79.85        | 107.45        |
 | deno-yoga-jit                                         | 12223.8    | 81.24        | 105.35        |
 | bun-fastify-mercurius-jit                             | 11688.4    | 84.97        | 100.47        |
 | bun-yoga-jit                                          | 11329.6    | 87.67        | 97.39         |
