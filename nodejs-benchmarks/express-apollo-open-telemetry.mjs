@@ -1,6 +1,6 @@
 'use strict';
 
-import '../lib/instrumentation/open-telemetry.js';
+import '../lib/instrumentation/open-telemetry-express.js';
 
 import express from 'express';
 import cors from 'cors';
