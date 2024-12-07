@@ -13,7 +13,6 @@ const forked = exec(
   },
   (error, stdout, stderr) => {
     if (error) {
-      console.log(`error: ${error.message}`);
       return;
     }
     if (stderr) {

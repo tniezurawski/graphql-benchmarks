@@ -74,12 +74,7 @@ async function select() {
       type: 'checkbox',
       message: 'Select stacks',
       name: 'list',
-      choices: [
-        new inquirer.Separator(' = The usual ='),
-        ...list(),
-        new inquirer.Separator(' = The extras = '),
-        ...list(true),
-      ],
+      choices: [new inquirer.Separator(' = Stacks ='), ...list()],
       validate: function (answer) {
         if (answer.length < 1) {
           return 'You must choose at least one package.';

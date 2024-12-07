@@ -7,7 +7,6 @@ const forked = exec(
   { cwd: path.join(__dirname, 'nestjs-fastify-mercurius', 'dist') },
   (error, stdout, stderr) => {
     if (error) {
-      console.log(`error: ${error.message}`);
       return;
     }
     if (stderr) {

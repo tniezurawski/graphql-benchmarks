@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { AuthorRest } from './models/author.rest';
-import { data } from '../../../../lib/data.cjs';
+import { data } from '../data/data';
 
 @Injectable()
 export class AuthorsService {

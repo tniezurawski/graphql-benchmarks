@@ -21,7 +21,7 @@ node ./benchmark [arguments (optional)]
 * __Node:__ `v22.11.0`
 * __Bun:__ `v1.1.34`
 * __Deno:__ `v2.0.6`
-* __Run:__ Sat Dec 07 2024 14:05:08 GMT+0100 (Central European Standard Time)
+* __Run:__ Sat Dec 07 2024 16:04:53 GMT+0100 (Central European Standard Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                                                       | Requests/s | Latency (ms) | Throughput/Mb |
@@ -65,9 +65,9 @@ node ./benchmark [arguments (optional)]
 | nodejs-express-apollo-pothos                          | 2587.5     | 323.40       | 22.66         |
 | nodejs-express-apollo-type-graphql                    | 2478.8     | 316.60       | 21.71         |
 | nodejs-nestjs-fastify-apollo                          | 2467.7     | 311.04       | 21.38         |
-| nodejs-express-apollo-open-telemetry-irs              | 2298.8     | 300.64       | 20.13         |
+| nodejs-express-apollo-open-telemetry-irs              | 2313.2     | 300.96       | 20.26         |
 | nodejs-nestjs-express-apollo                          | 2095.5     | 299.09       | 18.29         |
-| nodejs-nestjs-express-apollo-open-telemetry           | 1571.7     | 341.70       | 13.72         |
+| nodejs-nestjs-express-apollo-open-telemetry           | 1553.0     | 377.26       | 13.56         |
 | nodejs-fastify-mercurius-open-telemetry               | 751.6      | 462.82       | 6.50          |
-| nodejs-express-apollo-open-telemetry-itrs             | 622.6      | 526.15       | 5.45          |
-| nodejs-express-apollo-open-telemetry                  | 607.6      | 539.14       | 5.32          |
+| nodejs-express-apollo-open-telemetry-itrs             | 648.4      | 535.70       | 5.68          |
+| nodejs-express-apollo-open-telemetry                  | 641.5      | 526.25       | 5.62          |
