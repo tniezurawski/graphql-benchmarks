@@ -19,9 +19,9 @@ node ./benchmark [arguments (optional)]
 
 * __Machine:__ darwin arm64 | 10 vCPUs | 16.0GB Mem
 * __Node:__ `v22.11.0`
-* __Bun:__ `v1.1.34`
+* __Bun:__ `v1.1.38`
 * __Deno:__ `v2.0.6`
-* __Run:__ Sat Dec 07 2024 16:04:53 GMT+0100 (Central European Standard Time)
+* __Run:__ Sat Dec 07 2024 16:25:00 GMT+0100 (Central European Standard Time)
 * __Method:__ `autocannon -c 100 -d 40 -p 10 localhost:3000/graphql` (two rounds; one to warm-up, one to measure)
 
 |                                                       | Requests/s | Latency (ms) | Throughput/Mb |
@@ -29,22 +29,22 @@ node ./benchmark [arguments (optional)]
 | nodejs-fastify-mercurius-jit                          | 12706.4    | 78.13        | 109.81        |
 | nodejs-fastify-mercurius-pothos-jit                   | 12433.2    | 79.85        | 107.45        |
 | deno-yoga-jit                                         | 12223.8    | 81.24        | 105.35        |
-| bun-fastify-mercurius-jit                             | 11688.4    | 84.97        | 100.47        |
-| bun-yoga-jit                                          | 11329.6    | 87.67        | 97.39         |
-| nodejs-yoga-jit                                       | 11096.0    | 89.53        | 95.88         |
+| bun-fastify-mercurius-jit                             | 11745.8    | 84.56        | 100.97        |
+| bun-yoga-jit                                          | 11057.8    | 89.84        | 95.05         |
+| nodejs-yoga-jit                                       | 10941.2    | 90.81        | 94.55         |
 | deno-fastify-mercurius-jit                            | 10554.6    | 94.15        | 90.96         |
 | nodejs-fastify-mercurius-type-graphql-jit             | 9991.8     | 99.47        | 86.35         |
 | nodejs-nestjs-fastify-mercurius-jit-deparentification | 9904.6     | 100.34       | 85.59         |
 | nodejs-nestjs-fastify-mercurius-jit                   | 7679.1     | 129.54       | 66.36         |
-| bun-yoga                                              | 7577.1     | 131.28       | 65.13         |
-| bun-fastify-mercurius                                 | 6897.9     | 144.24       | 59.29         |
+| bun-yoga                                              | 7501.2     | 132.62       | 64.48         |
+| bun-fastify-mercurius                                 | 6784.0     | 146.67       | 58.32         |
 | nodejs-express-yoga-jit                               | 6765.6     | 147.03       | 58.81         |
 | nodejs-fastify-mercurius                              | 5786.2     | 172.00       | 50.00         |
 | nodejs-fastify-mercurius-pothos                       | 5712.1     | 174.21       | 49.36         |
 | nodejs-fastify-mercurius-type-graphql                 | 5472.2     | 181.86       | 47.29         |
 | nodejs-yoga                                           | 5443.6     | 182.81       | 47.04         |
 | nodejs-yoga-type-graphql                              | 5332.6     | 186.61       | 46.08         |
-| bun-graphql-http                                      | 5236.3     | 190.05       | 45.01         |
+| bun-graphql-http                                      | 5319.1     | 187.08       | 45.72         |
 | nodejs-fastify-mercurius-open-telemetry-irs           | 4976.9     | 198.96       | 43.01         |
 | deno-yoga                                             | 4469.4     | 222.68       | 38.52         |
 | deno-fastify-mercurius                                | 4406.5     | 225.89       | 37.97         |
